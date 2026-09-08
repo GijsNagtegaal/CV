@@ -1,12 +1,18 @@
 <script>
-	import favicon from '$lib/assets/favicon.svg';
-	import '../styles/styleguide.css';
+	import { onNavigate } from '$app/navigation';
 
 	let { children } = $props();
-</script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
+</script>
 
 {@render children()}
