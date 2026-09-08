@@ -91,6 +91,7 @@ main.home {
         }
 
         img.memo {
+            position: relative;
             min-width: 17rem;
             width: 60%;
             max-width: 17rem;
@@ -106,12 +107,12 @@ main.home {
             height: auto;
 
             &.pos-1 {
-                top: 20%;
+                top: 10%;
                 right: 10%;
                 animation: float 4s ease-in-out infinite;
 
                 @media (min-width: 800px) {
-                    top: 30%;
+                    top: 10%;
                     right: 10%;
                 }
             }
@@ -122,52 +123,63 @@ main.home {
                 animation: float 3s ease-in-out infinite;
 
                 @media (min-width: 800px) {
-                    top: 70%;
+                    top: 50%;
                     right: 0%;
                 }
             }
 
             &.pos-3 {
-                top: 75%;
+                top: 85%;
                 right: 5%;
                 animation: float 6s ease-in-out infinite;
 
                 @media (min-width: 800px) {
-                    top: 110%;
+                    top: 90%;
                     right: 20%;
                 }
             }
 
             &.pos-4 {
-                top: 30%;
-                left: 0%;
+                top: 10%;
+                left: 20%;
                 animation: float 6s ease-in-out infinite;
 
                 @media (min-width: 800px) {
-                    top: 45%;
+                    top: 25%;
                     left: 10%;
                 }
             }
 
             &.pos-5 {
-                top: 55%;
+                top: 20%;
                 left: 0%;
                 animation: float 8s ease-in-out infinite;
                 
                 @media (min-width: 800px) {
-                    top: 80%;
+                    top: 60%;
                     left: 5%;
                 }
             }
 
             &.pos-6 {
-                top: 80%;
+                top: 50%;
                 left: 5%;
                 animation: float 10s ease-in-out infinite;
 
                 @media (min-width: 800px) {
-                    top: 110%;
+                    top: 90%;
                     left: 20%;
+                }
+            }
+
+            &.pos-7 {
+                top: 78%;
+                left: 10%;
+                animation: float 10s ease-in-out infinite;
+
+                @media (min-width: 800px) {
+                    top: 0%;
+                    left: 25%;
                 }
             }
         }

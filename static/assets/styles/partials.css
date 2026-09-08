@@ -17,7 +17,7 @@ header.topnav {
     @supports (animation-timeline: scroll()) {
         animation: shrink-header linear both;
         animation-timeline: scroll(root);
-        animation-range: 20px 100px;  
+        animation-range: 50px 100px;  
     }
 
     &.scrolled {
@@ -29,6 +29,7 @@ header.topnav {
         grid-template-columns: 20% 1fr;
         width: 95%;
         color: var(--accent-header);
+        background: transparent;
 
         @media (min-width: 600px) {
             display: none;

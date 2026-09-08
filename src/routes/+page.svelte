@@ -3,10 +3,7 @@ import Head from '$lib/Head.svelte';
 import Header from '$lib/Header.svelte';
 import Picture from '$lib/picture.svelte';
 import Link from '$lib/Link.svelte';
-import PortfolioItem from '$lib/PortfolioItem.svelte';
 import Heading from '$lib/GeneralHeading.svelte';
-import Arrow from '$lib/Arrow.svelte';
-import TechStack from '$lib/TechStack.svelte';
 
 let { data } = $props();
 </script>
@@ -19,10 +16,6 @@ let { data } = $props();
     <!-- section with me and my tech stack -->
     <section class="imgijs">
 
-        <Heading 
-            heading_level={1} 
-        >Hey! i'm <em>Gijs Nagtegaal</em></Heading>
-
         <!-- partial to render a picture, requires a src, width and height to work -->
         <Picture 
             imagesrc="/assets/images/Gijs"
@@ -33,9 +26,7 @@ let { data } = $props();
             fetch="high"
         />
 
-        <Arrow />
-
-        {#each data.techStack.slice(0, 6) as tech, i}
+        {#each data.techStack.slice(0, 7) as tech, i}
             <Picture 
                 imagesrc={tech.image}
                 imagesrc_dark={tech.image_dark}
@@ -50,35 +41,24 @@ let { data } = $props();
     </section>
 
     <!-- About me + portfolio button-->
-    <section class="about">
+    <section class="about" id="overmij">
         
         <Heading 
             heading_level={2} 
-        >I am a <em>frontend</em> <em>developer</em></Heading>
+        >Hoi! ik ben <em>Gijs</em> <em>Nagtegaal</em></Heading>
         
-        <p>In addition to studying Frontend Design & Development at the HvA, I work as a freelance developer helping small business owners create their first professional website or online store.</p>
+        <p>
+            Ik studeer HBO Frontend Design en Development en ben graag lekker praktisch bezig. 
+            Van het bouwen van WordPress- en Shopify-sites tot het vliegen met drones, ik vind het tof om te ondernemen.
+            Ook houd ik van puzzelen met code (HTML, CSS en JavaScript) en bedenk graag oplossingen die goed en snel werken.
+        </p>
         
         <Link 
-            content="Check my portfolio"
+            content="Gelijk naar mijn werkervaring"
             custom_class="primary"
             svg="true"
         />
     </section>
 
-    <TechStack items={data.techStack} />
-
-    <!-- most recent work -->
-    <section class="recentwork">
-        
-        <Heading heading_level={3}>Recent <em>projects</em></Heading>
-        
-        <section class="workwrapper">
-            {#each data.projects as project}
-                <PortfolioItem {project} customclass="scroll-animated" />
-            {:else}
-                <p>No projects found.</p>
-            {/each}
-        </section>
-    </section>
 
 </main>
