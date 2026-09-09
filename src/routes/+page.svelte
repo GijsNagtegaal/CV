@@ -13,7 +13,7 @@ let { data } = $props();
 
 <main class="home">
 
-    <!-- section with me and my tech stack -->
+    <!-- section wsith me and my tech stack -->
     <section class="imgijs">
 
         <!-- partial to render a picture, requires a src, width and height to work -->
