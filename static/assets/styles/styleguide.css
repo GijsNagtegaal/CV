@@ -146,16 +146,30 @@ a, button {
         gap: 1rem;
         padding-block: 1rem;
         border-radius: var(--border-button);
-        color: var(--always-light);
+        color: var(--dark-text);
         transition: all .3s ease;
         box-shadow: -3px 3px 0 0 var(--primary);
         border: 2px solid var(--primary);
+
+        svg {
+            path {
+                stroke: var(--dark-text);
+            }
+            
+        }
 
         &:hover {
             transform: translate(-2px, 2px);
             box-shadow: -1px 1px 0 0 var(--primary);
             background-color: var(--primary);
             box-shadow: none;
+            color: var(--always-light);
+
+            svg {
+                path {
+                    stroke: var(--always-light);
+                }
+            }
         }
     }
 

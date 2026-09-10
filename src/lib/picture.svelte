@@ -16,7 +16,6 @@
   let finalLoading = $derived(loading ?? (isLocalAsset ? 'eager' : 'lazy'));
 </script>
 
-<!-- 4. Translate the {% if %} statements to {#if} blocks -->
 {#if isLocalAsset}
   
   <picture class={cssClass}>
