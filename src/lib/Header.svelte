@@ -2,10 +2,10 @@
 	import { page } from '$app/state';
 
 	const links = [
-		{ href: '/#overmij', label: 'Over mij' },
-		{ href: '/#werkervaring', label: 'Werkervaring' },
-		{ href: '/#opleidingen', label: 'Opleidingen' },
-		{ href: '/#certificaten', label: 'Certificaten' }
+		{ href: '/overmij', label: 'Over mij' },
+		{ href: '/werkervaring', label: 'Werkervaring' },
+		{ href: '/opleidingen', label: 'Opleidingen' },
+		{ href: '/certificaten', label: 'Certificaten' }
 	];
 </script>
 
@@ -36,6 +36,6 @@
 				<a href={link.href} class:active={page.url.pathname === link.href}>{link.label}</a>
 			{/each}
 		</nav>
-		<a class="contact" href="#contact">Contact</a>
+		<a class="contact" href="/contact">Contact</a>
 	</nav>
 </header>
