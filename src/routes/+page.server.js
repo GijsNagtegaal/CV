@@ -1,6 +1,16 @@
-import { getPortfolio, getTechStack } from '$lib/server/api';
+import { getPortfolio, getTechStack, getCvWerkervaring } from '$lib/server/api';
 
-export const load = async ({ fetch }) => ({
-	projects: await getPortfolio(fetch),
-	techStack: await getTechStack(fetch)
-});
+export const load = async ({ fetch }) => {
+    // Fire all three API calls simultaneously
+    const [projects, techStack, werkervaring] = await Promise.all([
+        getPortfolio(fetch),
+        getTechStack(fetch),
+        getCvWerkervaring(fetch)
+    ]);
+
+    return {
+        projects,
+        techStack,
+        werkervaring
+    };
+};

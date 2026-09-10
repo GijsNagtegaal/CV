@@ -4,6 +4,7 @@ import Header from '$lib/Header.svelte';
 import Picture from '$lib/picture.svelte';
 import Link from '$lib/Link.svelte';
 import Heading from '$lib/GeneralHeading.svelte';
+import Timeline from '../lib/Timeline.svelte';
 
 let { data } = $props();
 </script>
@@ -61,10 +62,15 @@ let { data } = $props();
         />
     </section>
 
-
+    <Timeline data="{data}" />
 </main>
 
 <style>
+
+:global(body) {
+    overflow-x: hidden;
+}
+
 :global(.fadeinup) {
     animation: fadeInUp 0.3s ease-out;
 }

@@ -84,7 +84,7 @@ main {
     }
 }
 
-h1, h2, h3, h4, h5, h6, em, span {
+h1, h2, h3, h4, h5, h6, em, span, time {
     font-family: baloo;
     font-weight: 600;
     font-size: var(--heading-medium);
