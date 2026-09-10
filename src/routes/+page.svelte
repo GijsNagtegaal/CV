@@ -84,6 +84,7 @@ let { data } = $props();
     font-size: 0.9rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     opacity: 0;
+    z-index: 0;
     transform: scale(0.5) translateY(0.625rem);
     transform-origin: bottom left;
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;

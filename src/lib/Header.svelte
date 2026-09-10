@@ -56,3 +56,11 @@
 		<a class="contact" href="/contact">Contact</a>
 	</nav>
 </header>
+
+<style>
+header:has(:popover-open) {
+    nav.mobile-nav {
+        background-color: var(--light-background);
+    }
+}
+</style>

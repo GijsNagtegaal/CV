@@ -34,6 +34,7 @@ header.topnav {
         width: 95%;
         color: var(--accent-header);
         background: transparent;
+        transition: background-color 0.3s ease;
 
         @media (min-width: 600px) {
             display: none;
