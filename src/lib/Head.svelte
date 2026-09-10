@@ -11,7 +11,5 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
 	<link rel="stylesheet" href="/assets/styles/keyframes.css" />
 	<link rel="stylesheet" href="/assets/styles/styleguide.css" />
-	<link rel="stylesheet" href="/assets/styles/style.css" />
-	<link rel="stylesheet" href="/assets/styles/partials.css" />
 	<script src="/assets/scripts/script.js" defer></script>
 </svelte:head>

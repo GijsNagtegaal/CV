@@ -15,3 +15,36 @@
 		{/each}
 	</section>
 </section>
+
+<style>
+section.techstack {
+	margin-top: 3rem;
+	overflow-x: scroll;
+	color: var(--dark-text);
+
+	@media (min-width: 800px) { margin-top: 30dvh; }
+
+	section {
+		display: flex;
+		gap: 2rem;
+		margin-block: 1rem;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		color: var(--dark-text);
+	}
+
+	figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: var(--dark-text);
+	}
+
+	:global(img.techstack) {
+		width: 7rem;
+		height: 7rem;
+		border-radius: var(--border-round);
+	}
+}
+</style>

@@ -72,6 +72,88 @@ let { data } = $props();
 :global(.imageani) {
     animation: imageani 4s ease-in-out forwards;
 }
+
+:global(main.home) {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+:global(main.home) :global(section.imgijs) {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+
+    @media (min-width: 800px) {
+        width: 45%;
+        margin-right: 5%;
+    }
+}
+
+:global(section.imgijs) :global(picture.memo) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: var(--border-round);
+    background-image: radial-gradient(
+        ellipse at center,
+        var(--primary) 0%,
+        color-mix(in srgb, var(--accent) 50%, transparent) 15%,
+        color-mix(in srgb, var(--accent) 15%, transparent) 35%,
+        transparent 75%
+    );
+}
+
+:global(section.imgijs) :global(img.memo) {
+    position: relative;
+    min-width: 20rem;
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-round);
+}
+
+:global(section.imgijs img.techstack) {
+    position: absolute;
+    width: calc(1vw + 3rem + 2%);
+    height: auto;
+
+    &:global(.pos-1) { top: 10%; right: 10%; animation: float 4s ease-in-out infinite; }
+    &:global(.pos-2) { top: 45%; right: 0%; animation: float 3s ease-in-out infinite; }
+    &:global(.pos-3) { top: 85%; right: 5%; animation: float 6s ease-in-out infinite; }
+    &:global(.pos-4) { top: 10%; left: 20%; animation: float 6s ease-in-out infinite; }
+    &:global(.pos-5) { top: 20%; left: 0%; animation: float 8s ease-in-out infinite; }
+    &:global(.pos-6) { top: 50%; left: 5%; animation: float 10s ease-in-out infinite; }
+    &:global(.pos-7) { top: 78%; left: 10%; animation: float 10s ease-in-out infinite; }
+
+    @media (min-width: 800px) {
+        &:global(.pos-1) { top: 10%; right: 10%; }
+        &:global(.pos-2) { top: 50%; right: 0%; }
+        &:global(.pos-3) { top: 90%; right: 20%; }
+        &:global(.pos-4) { top: 25%; left: 10%; }
+        &:global(.pos-5) { top: 60%; left: 5%; }
+        &:global(.pos-6) { top: 90%; left: 20%; }
+        &:global(.pos-7) { top: 0%; left: 25%; }
+    }
+}
+
+:global(section.about) {
+    color: var(--dark-text);
+
+    @media (min-width: 800px) {
+        width: 50%;
+    }
+
+:global(h2) { margin-top: 2rem; }
+
+    :global(p) {
+        color: inherit;
+        margin-block: 3dvh;
+    }
+}
+
 .text-cloud {
     position: absolute;
     top: -20px;
