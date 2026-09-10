@@ -22,7 +22,7 @@
 @keyframes shrink-header {
     from {
         --accent-header: light-dark(#1a1a1a, #F7F7F7);
-        --background-header: var(--light-background);
+        --background-header: transparent;
         height: 6.25rem;
         background-color: var(--background-header);
         backdrop-filter: blur(0px);

@@ -24,6 +24,10 @@ header.topnav {
         animation: shrink-header linear both;
     }
 
+    picture {
+        display: flex;
+    }
+
     nav.mobile-nav {
         display: grid;
         grid-template-columns: 20% 1fr;

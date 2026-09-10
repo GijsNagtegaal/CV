@@ -65,8 +65,6 @@ let { data } = $props();
 </main>
 
 <style>
-
-
 :global(.fadeinup) {
     animation: fadeInUp 0.3s ease-out;
 }
@@ -78,14 +76,13 @@ let { data } = $props();
     position: absolute;
     top: -20px;
     right: 40px;
-    background: #ffffff;
-    color: #333333;
+    background: var(--dark-background);
+    color: var(--light-text);
     padding: 0.625rem 1.125rem;
     border-radius: var(--border-badge);
     font-weight: bold;
     font-size: 0.9rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    z-index: 10;
     opacity: 0;
     transform: scale(0.5) translateY(0.625rem);
     transform-origin: bottom left;
@@ -99,7 +96,7 @@ let { data } = $props();
     left: 20px;
     border-width: 8px 8px 0;
     border-style: solid;
-    border-color: #ffffff transparent transparent transparent;
+    border-color: var(--dark-background) transparent transparent transparent;
 }
 
 @keyframes popIn {
