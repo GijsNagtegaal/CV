@@ -102,10 +102,14 @@ section.timeline {
 
         &:nth-child(odd) div { 
             grid-column: 2; 
+            padding: 1rem;
+            border-radius: var(--border-badge);
         }
 
         &:nth-child(even) div { 
             grid-column: 1;
+            padding: 1rem;
+            border-radius: var(--border-badge);
         }
     }
 }
@@ -138,7 +142,7 @@ section.timeline {
             transform: translateY(100px); 
             opacity: 0;
         }
-        100% { 
+        100% {
             transform: translateY(0%); 
             opacity: 1;
         }
