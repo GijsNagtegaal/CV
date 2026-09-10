@@ -126,13 +126,13 @@ let { data } = $props();
     width: calc(1vw + 3rem + 2%);
     height: auto;
 
-    &:global(.pos-1) { top: 10%; right: 10%; animation: float 4s ease-in-out infinite; }
-    &:global(.pos-2) { top: 45%; right: 0%; animation: float 3s ease-in-out infinite; }
-    &:global(.pos-3) { top: 85%; right: 5%; animation: float 6s ease-in-out infinite; }
-    &:global(.pos-4) { top: 10%; left: 20%; animation: float 6s ease-in-out infinite; }
-    &:global(.pos-5) { top: 20%; left: 0%; animation: float 8s ease-in-out infinite; }
-    &:global(.pos-6) { top: 50%; left: 5%; animation: float 10s ease-in-out infinite; }
-    &:global(.pos-7) { top: 78%; left: 10%; animation: float 10s ease-in-out infinite; }
+    &:global(.pos-1) { top: 10%; right: 10%;}
+    &:global(.pos-2) { top: 45%; right: 0%;}
+    &:global(.pos-3) { top: 85%; right: 5%;}
+    &:global(.pos-4) { top: 10%; left: 20%;}
+    &:global(.pos-5) { top: 20%; left: 0%;}
+    &:global(.pos-6) { top: 50%; left: 5%;}
+    &:global(.pos-7) { top: 78%; left: 10%;}
 
     @media (min-width: 800px) {
         &:global(.pos-1) { top: 10%; right: 10%; }
