@@ -1,12 +1,12 @@
 <script>
 	import { page } from '$app/state';
 
-	// const links = [
-	// 	{ href: '#overmij', label: 'Over mij' },
-	// 	{ href: '#werkervaring', label: 'Werkervaring' },
-	// 	{ href: '#opleidingen', label: 'Opleidingen' },
-	// 	{ href: '#certificaten', label: 'Certificaten' }
-	// ];
+	const links = [
+		{ href: '/#overmij', label: 'Over mij' },
+		{ href: '/#werkervaring', label: 'Werkervaring' },
+		{ href: '/#opleidingen', label: 'Opleidingen' },
+		{ href: '/#certificaten', label: 'Certificaten' }
+	];
 </script>
 
 <header class="topnav">
