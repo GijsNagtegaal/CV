@@ -1,6 +1,6 @@
 <script>
     import { page } from '$app/state';
-    import Picture from '$lib/picture.svelte';      
+    import Picture from '$lib/components/picture.svelte';      
 
     const links = [
         { href: '/overmij', label: 'Over mij' },

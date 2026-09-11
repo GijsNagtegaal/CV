@@ -1,10 +1,10 @@
 <script>
-import Head from '$lib/Head.svelte';
-import Header from '$lib/Header.svelte';
-import Picture from '$lib/picture.svelte';
-import Link from '$lib/Link.svelte';
-import Heading from '$lib/GeneralHeading.svelte';
-import Timeline from '../lib/Timeline.svelte';
+import Head from '$lib/components/Head.svelte';
+import Header from '$lib/components/Header.svelte';
+import Picture from '$lib/components/picture.svelte';
+import Link from '$lib/components/Link.svelte';
+import Heading from '$lib/components/GeneralHeading.svelte';
+import Timeline from '$lib/components/Timeline.svelte';
 
 let { data } = $props();
 </script>

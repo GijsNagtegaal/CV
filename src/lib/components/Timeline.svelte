@@ -22,9 +22,8 @@
             <div class="workwrapper">
                 <h1>{job.Functie}</h1>
                 <p>{job.Werkgever}</p>
-                <div>
+                <div class="time">
                     <time datetime="{job.Jaar_begonnen}">{job.Jaar_begonnen}</time>
-                    <p>-</p>
                     <time datetime="{job.Jaar_gestopt}">{job.Jaar_gestopt}</time>
                 </div>
                 <p>
@@ -90,25 +89,21 @@ section.timeline {
             font-style: italic; 
         }
         
-        div > div {
-            
+        div.time {
+            display: flex;
+
             time { 
-                font-size: 2.5rem; 
-                font-weight: bold; 
-                color: white; 
+                font-size: var(--heading-medium);
             }
-            p { display: none; } 
         }
 
         &:nth-child(odd) div { 
             grid-column: 2; 
-            padding: 1rem;
             border-radius: var(--border-badge);
         }
 
         &:nth-child(even) div { 
             grid-column: 1;
-            padding: 1rem;
             border-radius: var(--border-badge);
         }
     }
