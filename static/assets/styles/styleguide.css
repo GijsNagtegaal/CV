@@ -69,8 +69,9 @@ body {
 }
 
 main {
-
-    width: 90%;
+    padding: 1rem;
+    overflow: clip;
+    width: 100%;
     margin: 0 auto;
 
     @media (min-width: 600px) {

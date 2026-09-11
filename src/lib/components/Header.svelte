@@ -23,7 +23,6 @@
                 fetch="high"
             />
         </a>
-        <!-- Open button -->
         <button class="hamburger" popovertarget="mobile-menu">
             <svg viewBox="0 0 32 32" aria-hidden="true"><path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path><path class="line" d="M7 16 27 16"></path></svg>
             Menu
@@ -101,10 +100,6 @@ header.topnav {
         animation: shrink-header linear both;
         animation-timeline: scroll(root);
         animation-range: 50px 100px;
-    }
-
-    :global(picture) { 
-        display: flex; 
     }
 
     nav.mobile-nav {
@@ -234,13 +229,12 @@ header.topnav {
         }
     }
 
-    /* Styling the semantic header inside the popover */
     header.popover-header {
         display: grid;
         grid-template-columns: 20% 1fr;
         width: 95%;
         margin: 0 auto;
-        height: 6.25rem; /* Matches your main header height */
+        height: 6.25rem;
         align-items: center;
 
         .logo {

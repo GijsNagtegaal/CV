@@ -49,3 +49,8 @@ export async function getCvWerkervaring(fetcher) {
     const items = await fetchData('cv_werkervaring', fetcher);
     return processItems(items);
 }
+
+export async function getCvOpleidingen(fetcher) {
+    const items = await fetchData('cv_opleidingen', fetcher);
+    return processItems(items);
+}

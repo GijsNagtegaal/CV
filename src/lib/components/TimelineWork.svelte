@@ -1,8 +1,9 @@
 <script>
     import ArrowRight from "./icons/ArrowRight.svelte";
+    import Heading from '$lib/components/GeneralHeading.svelte';
+
     let { data } = $props();
 
-    // sort the jobs to be like a real cv on date
     let sortedJobs = $derived(
         [...data.werkervaring].sort((a, b) => {
             const aIsHeden = a.Jaar_gestopt === 'Heden';
@@ -17,12 +18,12 @@
     );
 </script>
 
+<Heading class="fadeinup margin big" heading_level={2} >Mijn <em>Werkervaring</em></Heading>
 <section class="timeline">
     {#each sortedJobs as job}
-        <!-- i need a better solution then this -->
-        <article tabindex="0">  
+        <article>
             <div class="workwrapper" >
-                <h1>{job.Functie}</h1>
+                <h3>{job.Functie}</h3>
                 <p>{job.Werkgever}</p>
                 <div class="time">
                     <time datetime="{job.Jaar_begonnen}">{job.Jaar_begonnen}</time>
@@ -43,10 +44,13 @@ section.timeline {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-block: 5rem;
+    margin-bottom: 6rem;
     width: 100%;
 
-    
+    @media (min-width:500px) {
+        margin-bottom: 10rem;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -61,9 +65,13 @@ section.timeline {
     article {
         position: relative;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 45% 45%;
         gap: 2rem; 
         width: 100%;
+
+        @media (min-width:500px) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         &::before {
             content: '';
@@ -85,8 +93,7 @@ section.timeline {
             border-radius: var(--border-badge);
         }
 
-        h1 { 
-            margin-top: 0; 
+        h3 {
             color: var(--accent-card); 
             font-size: 1.25rem; 
             font-style: italic; 

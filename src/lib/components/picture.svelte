@@ -24,7 +24,6 @@
       <source srcset="{imagesrc_dark}.webp?width={width}&height={height}&quality=90" type="image/webp" media="(prefers-color-scheme: dark)" />
     {/if}
 
-    <!-- Default / Light mode source -->
     <source srcset="{imagesrc}.avif?width={width}&height={height}&quality=90" type="image/avif" />
     <source srcset="{imagesrc}.webp?width={width}&height={height}&quality=90" type="image/webp" />
     
@@ -46,7 +45,6 @@
       <source srcset="{imagesrc_dark}?width={width}&height={height}&format=webp&quality=90" type="image/webp" media="(prefers-color-scheme: dark)" />
     {/if}
 
-    <!-- Default / Light mode source -->
     <source srcset="{imagesrc}?width={width}&height={height}&format=avif&quality=90" type="image/avif" />
     <source srcset="{imagesrc}?width={width}&height={height}&format=webp&quality=90" type="image/webp" />
     
@@ -61,3 +59,89 @@
   </picture>
 
 {/if}
+
+<style>
+  picture {
+    display: flex;
+  }
+
+  picture.memo {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: var(--border-round);
+    background-image: radial-gradient(
+      ellipse at center,
+      var(--primary) 0%,
+      color-mix(in srgb, var(--accent) 50%, transparent) 15%,
+      color-mix(in srgb, var(--accent) 15%, transparent) 35%,
+      transparent 75%
+    );
+  }
+
+  img.memo {
+    position: relative;
+    min-width: 20rem;
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-round);
+    animation: imageani 4s ease-in-out forwards;
+  }
+  picture.techstack {
+    position: absolute;
+    width: 3rem;
+    height: auto;
+    z-index: 2;
+
+    &.pos-1 { top: 10%; right: 20%; --mx: 30vw;  --my: -30vh; --rot: 45deg; }
+    &.pos-2 { top: 45%; right: 10%;  --mx: 40vw;  --my: 10vh;  --rot: 90deg; }
+    &.pos-3 { top: 75%; right: 15%;  --mx: 30vw;  --my: 40vh;  --rot: -45deg; }
+    &.pos-4 { top: 5%; left: 20%;  --mx: -20vw; --my: -40vh; --rot: -60deg; }
+    &.pos-5 { top: 25%; left: 5%;   --mx: -40vw; --my: -10vh; --rot: -90deg; }
+    &.pos-6 { top: 50%; left: 15%;   --mx: -50vw; --my: 20vh;  --rot: -30deg; }
+    &.pos-7 { top: 78%; left: 10%;  --mx: -30vw; --my: 50vh;  --rot: 60deg; }
+    @media (min-width: 800px) {
+      width: 2rem;
+
+      &.pos-1 { top: 10%; right: 10%; }
+      &.pos-2 { top: 50%; right: 0%; }
+      &.pos-3 { top: 90%; right: 20%; }
+      &.pos-4 { top: 25%; left: 10%; }
+      &.pos-5 { top: 60%; left: 5%; }
+      &.pos-6 { top: 90%; left: 20%; }
+      &.pos-7 { top: 0%; left: 25%; }
+    }
+  }
+
+  @keyframes imageani {
+    0% { border-radius: 5%; }
+    20% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    50% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+    80% { border-radius: 30% 70% 70% 30% / 50% 60% 40% 50%; }
+    100% { border-radius: var(--border-round, 50%); }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    picture.techstack {
+      animation-timeline: scroll(root);
+      animation-range: 0 90vh; 
+      animation-name: float-away;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+    }
+
+    @keyframes float-away {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--mx), var(--my)) rotate(var(--rot)) scale(1.5);
+        opacity: 0; 
+      }
+    }
+  }
+</style>
