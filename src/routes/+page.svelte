@@ -53,7 +53,6 @@ let { data } = $props();
 
     <TimelineWork data={data} />
     <TimelineStudy data={data} />
-    <TimelineWork data={data} />
 </main>
 
 <style>
@@ -64,7 +63,6 @@ let { data } = $props();
 .fadeinup {
     animation: fadeInUp 0.3s ease-out;
 }
-
 main.home {
     display: flex;
     flex-wrap: wrap;
