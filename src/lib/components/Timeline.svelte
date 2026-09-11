@@ -1,4 +1,5 @@
 <script>
+    import ArrowRight from "./icons/ArrowRight.svelte";
     let { data } = $props();
 
     // sort the jobs to be like a real cv on date
@@ -18,12 +19,14 @@
 
 <section class="timeline">
     {#each sortedJobs as job}
-        <article>  
-            <div class="workwrapper">
+        <!-- i need a better solution then this -->
+        <article tabindex="0">  
+            <div class="workwrapper" >
                 <h1>{job.Functie}</h1>
                 <p>{job.Werkgever}</p>
                 <div class="time">
                     <time datetime="{job.Jaar_begonnen}">{job.Jaar_begonnen}</time>
+                    <ArrowRight size="1.5rem" />
                     <time datetime="{job.Jaar_gestopt}">{job.Jaar_gestopt}</time>
                 </div>
                 <p>
@@ -78,8 +81,8 @@ section.timeline {
 
         div.workwrapper {
             background-color: #2a2a2a; 
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 1rem;
+            border-radius: var(--border-badge);
         }
 
         h1 { 
@@ -91,6 +94,9 @@ section.timeline {
         
         div.time {
             display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-block: .5rem;
 
             time { 
                 font-size: var(--heading-medium);
