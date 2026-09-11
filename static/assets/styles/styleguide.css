@@ -45,8 +45,9 @@ body {
     --body-background-green: #fe8b5038;
 
     /* accent colors */
-    --accent-card: light-dark(#2C3E50, #43A7FF);
+    --accent-card: light-dark(transparent, #F7F7F7);
     --accent-button: light-dark(#43A7FF, #2C3E50);
+    --accent-button-inverted: light-dark(#2C3E50, #43A7FF);
     --accent-header: light-dark(#1a1a1a, #F7F7F7);
     
     --primary: light-dark(#2C3E50, #43A7FF);

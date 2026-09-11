@@ -1,5 +1,6 @@
 <script>
 	import { onNavigate } from '$app/navigation';
+	import CursorGlow from '$lib/components/CursorGlow.svelte';
 
 	let { children } = $props();
 
@@ -15,4 +16,5 @@
 	});
 </script>
 
+<CursorGlow />
 {@render children()}

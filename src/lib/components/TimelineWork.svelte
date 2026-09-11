@@ -59,7 +59,7 @@ section.timeline {
         left: 50%;
         transform: translateX(-50%);
         width: 2px;
-        background-color: var(--accent-card);
+        background-color: var(--dark-background);
     }
 
     article {
@@ -82,15 +82,17 @@ section.timeline {
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background-color: var(--accent-card);
+            background-color: var(--light-text);
             border: 4px solid var(--dark-background, #1a1a1a); 
             z-index: 1;
         }
 
         div.workwrapper {
-            background-color: #2a2a2a; 
+            background-color: var(--light-background); 
             padding: 1rem;
             border-radius: var(--border-badge);
+            border: 2px solid var(--dark-background);
+            
         }
 
         h3 {
