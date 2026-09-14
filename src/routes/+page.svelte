@@ -1,6 +1,4 @@
 <script>
-import Head from '$lib/components/Head.svelte';
-import Header from '$lib/components/Header.svelte';
 import Picture from '$lib/components/picture.svelte';
 import Heading from '$lib/components/GeneralHeading.svelte';
 import TimelineWork from '$lib/components/TimelineWork.svelte';
@@ -9,51 +7,46 @@ import TimelineStudy from '$lib/components/TimelineStudy.svelte';
 let { data } = $props();
 </script>
 
-<Head />
-<Header />
+<section class="imgijs">
+    <Picture 
+        imagesrc="/assets/images/Gijs"
+        width="280"
+        height="280"
+        alt="Gijs Nagtegaal"
+        class="memo imageani" 
+        fetch="high"
+    />
+    
+    <p class="text-cloud">Hoi! Ik ben Gijs</p>
 
-<main class="home">
-
-    <section class="imgijs">
+    {#each data.techStack.slice(0, 7) as tech, i}
         <Picture 
-            imagesrc="/assets/images/Gijs"
-            width="280"
-            height="280"
-            alt="Gijs Nagtegaal"
-            class="memo imageani" 
+            imagesrc={tech.image}
+            imagesrc_dark={tech.image_dark}
+            width="80"
+            height="80"
+            alt={tech.name}
+            class="round badge techstack pos-{i + 1}"
             fetch="high"
         />
-        
-        <p class="text-cloud">Hoi! Ik ben Gijs</p>
+    {/each}
 
-        {#each data.techStack.slice(0, 7) as tech, i}
-            <Picture 
-                imagesrc={tech.image}
-                imagesrc_dark={tech.image_dark}
-                width="80"
-                height="80"
-                alt={tech.name}
-                class="round badge techstack pos-{i + 1}"
-                fetch="high"
-            />
-        {/each}
+</section>
 
-    </section>
+<section class="about" id="overmij">
+    
+    <Heading class="fadeinup" heading_level={2} >Hoi! ik ben <em>Gijs</em> <em>Nagtegaal</em></Heading>
+    
+    <p class="fadeinup">
+        Ik studeer HBO Frontend Design en Development en ben graag lekker praktisch bezig. 
+        Van het bouwen van WordPress- en Shopify-sites tot het vliegen met drones, ik vind het tof om te ondernemen.
+        Ook houd ik van puzzelen met code (HTML, CSS en JavaScript) en bedenk graag oplossingen die goed en snel werken.
+    </p>
+</section>
 
-    <section class="about" id="overmij">
-        
-        <Heading class="fadeinup" heading_level={2} >Hoi! ik ben <em>Gijs</em> <em>Nagtegaal</em></Heading>
-        
-        <p class="fadeinup">
-            Ik studeer HBO Frontend Design en Development en ben graag lekker praktisch bezig. 
-            Van het bouwen van WordPress- en Shopify-sites tot het vliegen met drones, ik vind het tof om te ondernemen.
-            Ook houd ik van puzzelen met code (HTML, CSS en JavaScript) en bedenk graag oplossingen die goed en snel werken.
-        </p>
-    </section>
+<TimelineWork data={data} />
+<TimelineStudy data={data} />
 
-    <TimelineWork data={data} />
-    <TimelineStudy data={data} />
-</main>
 
 <style>
 :global(body) {
@@ -63,10 +56,7 @@ let { data } = $props();
 .fadeinup {
     animation: fadeInUp 0.3s ease-out;
 }
-main.home {
-    display: flex;
-    flex-wrap: wrap;
-}
+
 
 section.imgijs {
     width: 100%;

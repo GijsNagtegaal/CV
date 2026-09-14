@@ -1,6 +1,8 @@
 <script>
 	import { onNavigate } from '$app/navigation';
 	import CursorGlow from '$lib/components/CursorGlow.svelte';
+	import Head from '$lib/components/Head.svelte';
+	import Header from '$lib/components/Header.svelte';
 
 	let { children } = $props();
 
@@ -16,5 +18,16 @@
 	});
 </script>
 
-<CursorGlow />
-{@render children()}
+<main class="home">
+	<Head />
+	<Header />
+	<CursorGlow />
+	{@render children()}
+</main>
+
+<style>
+	main.home {
+		display: flex;
+		flex-wrap: wrap;
+	}
+</style>

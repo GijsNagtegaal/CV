@@ -144,8 +144,7 @@ picture.techstack {
         15% {
             opacity: 0.8;
         }
-
-        /* Smoothly glide off-screen by 25% */
+        
         25% {
             transform: translate(var(--mxh), var(--myh)) rotate(var(--roth)) scale(1.1);
             opacity: 0; 
