@@ -17,12 +17,13 @@
 </script>
 
 <Heading class="fadeinup margin big" heading_level={2} >Mijn <em>Opleidingen</em></Heading>
+
 <section class="study-timeline">
     {#each sortedStudies as opleiding}
         <article class="study-card">
             <div class="timeline-marker"></div>
             
-            <div class="content-wrapper">
+            <div class="study-wrapper">
                 <div class="card-header">
                     <h3>{opleiding.Opleiding}</h3>
                     <span class="year-badge">{opleiding.Jaar_begonnen} - {opleiding.Jaar_gestopt}</span>
@@ -35,7 +36,3 @@
         </article>
     {/each}
 </section>
-
-<style>
-
-</style>

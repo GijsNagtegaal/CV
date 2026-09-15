@@ -18,9 +18,11 @@
 	});
 </script>
 
+<Head />
+<Header />
+
 <main class="home">
-	<Head />
-	<Header />
+
 	<CursorGlow />
 	{@render children()}
 </main>

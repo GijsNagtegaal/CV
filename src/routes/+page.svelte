@@ -35,7 +35,7 @@ let { data } = $props();
 
 <section class="about" id="overmij">
     
-    <Heading class="fadeinup" heading_level={2} >Hoi! ik ben <em>Gijs</em> <em>Nagtegaal</em></Heading>
+    <Heading class="textappear" heading_level={2} >Hoi! ik ben <em>Gijs</em> <em>Nagtegaal</em></Heading>
     
     <p class="fadeinup">
         Ik studeer HBO Frontend Design en Development en ben graag lekker praktisch bezig. 
@@ -52,11 +52,6 @@ let { data } = $props();
 :global(body) {
     overflow-x: hidden;
 }
-
-.fadeinup {
-    animation: fadeInUp 0.3s ease-out;
-}
-
 
 section.imgijs {
     width: 100%;
@@ -124,16 +119,4 @@ section.about {
         transform: scale(1) translateY(0);
     }
 }
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 </style>

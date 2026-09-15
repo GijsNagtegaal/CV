@@ -86,7 +86,7 @@ main {
     }
 }
 
-h1, h2, h3, h4, h5, h6, em, span, time {
+h1, h2, h3, h4, h5, h6, em, span, time, details, summary {
     font-family: baloo;
     font-weight: 600;
     font-size: var(--heading-medium);
@@ -221,4 +221,14 @@ a.project:focus-visible {
 
 .breathingspace {
     margin-block: .5rem;
+}
+
+/* can be applied to all. html elements to give them the same animation when page is loaded */
+
+.fadeinup {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.textappear {
+    animation: textappear 0.3s ease-out;
 }
