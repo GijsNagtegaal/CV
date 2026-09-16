@@ -180,5 +180,4 @@ section.timeline {
         }
     }
 }
-
 </style>

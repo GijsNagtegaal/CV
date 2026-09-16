@@ -19,7 +19,7 @@ let { data } = $props();
     
     <p class="text-cloud">Hoi! Ik ben Gijs</p>
 
-    {#each data.techStack.slice(0, 7) as tech, i}
+    {#each data.techStack.slice(0, 6) as tech, i}
         <Picture 
             imagesrc={tech.image}
             imagesrc_dark={tech.image_dark}

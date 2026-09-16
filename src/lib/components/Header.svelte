@@ -183,9 +183,23 @@ header.topnav {
             stroke-linecap: round;
             stroke-linejoin: round;
             stroke-width: 3;
+            transform-box: fill-box;
+            transform-origin: center;
+            transition: transform .35s cubic-bezier(.16, 1, .3, 1), opacity .2s ease;
         }
         .line-top-bottom { stroke-dasharray: 12 63; }
         &:hover .line { filter: brightness(1.2); }
+    }
+
+    &:has(#mobile-menu:popover-open) button.hamburger {
+        .line-top-bottom {
+            transform: rotate(45deg) translate(2px, 2px);
+        }
+
+        .line:not(.line-top-bottom) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
     }
 }
 
@@ -255,7 +269,12 @@ header.topnav {
             color: var(--accent-header);
             cursor: pointer;
 
-            svg { height: 3em; }
+            svg {
+                height: 3em;
+                transform: rotate(-90deg) scale(.65);
+                transform-origin: center;
+                transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+            }
             .line {
                 fill: none;
                 stroke: var(--accent-header);
@@ -265,6 +284,10 @@ header.topnav {
             }
             &:hover .line { filter: brightness(1.2); }
         }
+    }
+
+    &:popover-open .close-btn svg {
+        transform: rotate(0deg) scale(1);
     }
 
     nav.hamburger-menu { 
