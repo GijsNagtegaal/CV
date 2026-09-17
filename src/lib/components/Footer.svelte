@@ -92,7 +92,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto auto;
         margin: 1rem;
-        padding: 1rem;
+        padding: 2rem 1rem;
         gap: 2rem;
 
         @media (min-width: 600px) {
@@ -147,6 +147,12 @@
     }
 
     nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    section:nth-of-type(3) {
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
