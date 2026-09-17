@@ -11,7 +11,7 @@ let { data } = $props();
 
 <GlowingDot left="5rem" top="5rem" glowColor="#ffffff" />
 
-<section class="imgijs">
+<section class="imgijs" id="overmij">
     <Picture 
         imagesrc="/assets/images/Gijs"
         width="280"
@@ -36,7 +36,7 @@ let { data } = $props();
     {/each}
 </section>
 
-<section class="about" id="overmij">
+<section class="about">
     
     <Heading class="textappear" heading_level={2} >Hoi! ik ben <em>Gijs</em> <em>Nagtegaal</em></Heading>
     
@@ -47,11 +47,11 @@ let { data } = $props();
     </p>
 </section>
 
-<TimelineWork data={data} />
+<TimelineWork data={data} id="werkervaring" />
 
-<TechStack items={data.techStack} />
+<TechStack items={data.techStack} id="techstack" />
 
-<TimelineStudy data={data} />
+<TimelineStudy data={data} id="opleidingen" />
 
 <style>
 :global(body) {

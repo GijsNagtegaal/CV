@@ -20,7 +20,7 @@
 
 <Heading id="werkervaring" class="fadeinup margin biggest" heading_level={2} >Mijn <em>Werkervaring</em></Heading>
 
-<section class="work" id="werkervaring">
+<section class="work">
     {#each sortedJobs as job}
         <article>
             <div class="workwrapper" >
@@ -45,7 +45,7 @@ section.work {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     width: 100%;
 
     @media (min-width:500px) {
@@ -98,8 +98,6 @@ section.work {
         }
 
         h3 {
-            font-size: 1.25rem; 
-            font-style: italic; 
             color: var(--always-light); 
         }
 

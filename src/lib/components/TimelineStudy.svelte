@@ -19,7 +19,7 @@
 
 <Heading id="opleidingen" class="fadeinup margin big" heading_level={2} >Mijn <em>Opleidingen</em></Heading>
 
-<section class="study" id="opleidingen">
+<section class="study">
     {#each sortedStudies as opleiding}
         <article class="study-card">
             <div class="timeline-marker"></div>

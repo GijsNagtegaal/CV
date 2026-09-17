@@ -88,14 +88,15 @@
     }
 
     article {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto auto;
+        display: flex;
+        flex-direction: column;
         margin: 1rem;
         padding: 2rem 1rem;
         gap: 2rem;
 
         @media (min-width: 600px) {
+            display: grid;
+            grid-template-rows: 1fr auto auto;
             width: 95%;
             margin: 0 auto;
             grid-template-columns: 1fr 1fr;

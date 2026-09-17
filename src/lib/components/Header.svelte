@@ -1,13 +1,39 @@
 <script>
-    import { page } from '$app/state';
+    import { onMount } from 'svelte';
     import Picture from '$lib/components/Picture.svelte';      
 
     const links = [
-        { href: '/overmij', label: 'Over mij' },
-        { href: '/werkervaring', label: 'Werkervaring' },
-        { href: '/opleidingen', label: 'Opleidingen' },
-        { href: '/certificaten', label: 'Certificaten' }
+        { href: '#overmij', label: 'Over mij' },
+        { href: '#werkervaring', label: 'Werkervaring' },
+        { href: '#techstack', label: 'Skills' },
+        { href: '#opleidingen', label: 'Opleidingen' },
     ];
+
+    let activeSection = $state('overmij');
+
+    onMount(() => {
+        const sections = links
+            .filter((link) => link.href.startsWith('#'))
+            .map((link) => document.querySelector(link.href))
+            .filter(Boolean);
+
+        const observer = new IntersectionObserver((entries) => {
+            const visibleSection = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+
+            if (visibleSection) {
+                activeSection = visibleSection.target.id;
+            }
+        }, {
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        });
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    });
 </script>
 
 <header class="topnav">
@@ -51,7 +77,7 @@
             
             <nav class="hamburger-menu">
                 {#each links as link}
-                    <a href={link.href} class:active={page.url.pathname === link.href}>
+                    <a href={link.href} class:active={activeSection === link.href.slice(1)}>
                         {link.label}
                     </a>
                 {/each}
@@ -73,7 +99,7 @@
         </a>
         <nav class="desktop-menu">
             {#each links as link}
-                <a href={link.href} class:active={page.url.pathname === link.href}>{link.label}</a>
+                <a href={link.href} class:active={activeSection === link.href.slice(1)}>{link.label}</a>
             {/each}
         </nav>
         <a class="contact" href="/contact">Contact</a>
