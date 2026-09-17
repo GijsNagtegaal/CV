@@ -9,8 +9,6 @@ import GlowingDot from '../lib/components/GlowingDot.svelte';
 let { data } = $props();
 </script>
 
-<GlowingDot left="1rem" top="2rem" glowColor="#F54927" />
-
 <section class="imgijs" id="overmij">
     <Picture 
         imagesrc="/assets/images/Gijs"
