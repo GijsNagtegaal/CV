@@ -1,8 +1,9 @@
 <script>
-import Picture from '$lib/components/picture.svelte';
+import Picture from '$lib/components/Picture.svelte';
 import Heading from '$lib/components/GeneralHeading.svelte';
 import TimelineWork from '$lib/components/TimelineWork.svelte';
 import TimelineStudy from '$lib/components/TimelineStudy.svelte';
+import TechStack from '../lib/components/TechStack.svelte';
 
 let { data } = $props();
 </script>
@@ -45,7 +46,11 @@ let { data } = $props();
 </section>
 
 <TimelineWork data={data} />
+
+<TechStack items={data.techStack} />
+
 <TimelineStudy data={data} />
+
 
 
 <style>

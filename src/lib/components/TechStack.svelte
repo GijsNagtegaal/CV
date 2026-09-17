@@ -1,15 +1,15 @@
 <script>
-	import Picture from '$lib/picture.svelte';
+	import Picture from '$lib/components/Picture.svelte';
 
-	let { items } = $props();
+	let { items = [] } = $props();
 </script>
 
 <section class="techstack">
-	<h3>My Current <em>tech stack</em></h3>
+	<h3>Mijn Huidige <em>Skills</em></h3>
 	<section>
 		{#each items as tech, i}
 			<figure>
-				<Picture imagesrc={tech.image} imagesrc_dark={tech.image_dark} width="100" height="100" alt={tech.name} class="round badge techstack pos-{i + 1}" fetch="high" />
+				<Picture imagesrc={tech.image} imagesrc_dark={tech.image_dark} width="100" height="100" alt={tech.name} class="round badge staticstack" fetch="high" />
 				<figcaption>{tech.name}</figcaption>
 			</figure>
 		{/each}
@@ -18,11 +18,11 @@
 
 <style>
 section.techstack {
-	margin-top: 3rem;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 	overflow-x: scroll;
-	color: var(--dark-text);
-
-	@media (min-width: 800px) { margin-top: 30dvh; }
+	color: var(--dark-text); 
 
 	section {
 		display: flex;

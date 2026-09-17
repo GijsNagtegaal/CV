@@ -19,7 +19,8 @@
 </script>
 
 <Heading class="fadeinup margin big" heading_level={2} >Mijn <em>Werkervaring</em></Heading>
-<section class="timeline">
+
+<section class="work">
     {#each sortedJobs as job}
         <article>
             <div class="workwrapper" >
@@ -39,7 +40,7 @@
 </section>
 
 <style>
-section.timeline {
+section.work {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -126,7 +127,7 @@ section.timeline {
 
 @supports (animation-timeline: view()) {
     
-    section.timeline article div {
+    section.work article div {
         opacity: 0;
         will-change: transform, opacity;
         animation-duration: 1ms;
@@ -138,11 +139,11 @@ section.timeline {
     }
 
     @media (min-width: 789px) {
-        section.timeline article:nth-child(odd) div {
+        section.work article:nth-child(odd) div {
             animation-name: slide-in-right;
         }
 
-        section.timeline article:nth-child(even) div {
+        section.work article:nth-child(even) div {
             animation-name: slide-in-left;
         }
     }

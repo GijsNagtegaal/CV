@@ -91,6 +91,16 @@
 		animation: imageani 4s ease-in-out forwards;
 	}
 
+	picture.staticstack {
+		width: 5rem;
+		height: 5rem;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	picture.techstack {
 		position: absolute;
 		width: 3rem;
