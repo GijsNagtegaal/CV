@@ -4,9 +4,12 @@ import Heading from '$lib/components/GeneralHeading.svelte';
 import TimelineWork from '$lib/components/TimelineWork.svelte';
 import TimelineStudy from '$lib/components/TimelineStudy.svelte';
 import TechStack from '../lib/components/TechStack.svelte';
+import GlowingDot from '../lib/components/GlowingDot.svelte';
 
 let { data } = $props();
 </script>
+
+<GlowingDot left="5rem" top="5rem" glowColor="#ffffff" />
 
 <section class="imgijs">
     <Picture 
@@ -31,7 +34,6 @@ let { data } = $props();
             fetch="high"
         />
     {/each}
-
 </section>
 
 <section class="about" id="overmij">

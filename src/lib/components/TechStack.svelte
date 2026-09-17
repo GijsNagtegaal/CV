@@ -22,7 +22,7 @@ section.techstack {
 	flex-direction: column;
 	width: 100%;
 	overflow-x: scroll;
-	color: var(--dark-text); 
+	color: var(--dark-text);
 
 	section {
 		display: flex;
@@ -38,7 +38,14 @@ section.techstack {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		color: var(--dark-text);
+		background: var(--dark-background);
+		padding: 0.5rem;
+		border-radius: var(--border-card);
+
+		figcaption {
+			color: var(--light-text);
+			font-weight: 700;
+		}
 	}
 
 	:global(img.techstack) {
