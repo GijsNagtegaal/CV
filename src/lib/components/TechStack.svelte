@@ -75,7 +75,7 @@
                 div {
                     position: relative;
                     overflow-x: hidden;
-                    mask-image: linear-gradient(to right, transparent, var(--dark-background) 6%, var(--dark-background) 94%, transparent);
+                    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 
                     section {
                         --gap: clamp(1rem, 2vw, 2.5rem);

@@ -82,9 +82,12 @@
         border-top: 1px solid var(--body-background-green);
     }
 
+    p, a, h3, h4 {
+        color: var(--always-light);
+    }
+
     h3 {
         font-size: 1rem;
-        color: var(--dark-text);
     }
 
     article {
@@ -126,7 +129,7 @@
             display: flex;
             flex-direction: column;
             padding: 1rem;
-            border: 2px solid var(--dark-text);
+            border: 2px solid var(--always-light);
             border-radius: var(--border-card);
             background-color: var(--background-grey);
 

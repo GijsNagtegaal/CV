@@ -56,7 +56,7 @@
 
         <section id="mobile-menu" popover="auto">
             <header class="popover-header">
-                <a class="logo" href="/">
+            <a class="logo" href="/">
                     <Picture 
                         imagesrc="/assets/images/logo"
                         imagesrc_dark="/assets/images/logo-dark"
@@ -81,7 +81,6 @@
                         {link.label}
                     </a>
                 {/each}
-            </nav>
         </section>
     </nav>
 
@@ -101,7 +100,6 @@
             {#each links as link}
                 <a href={link.href} class:active={activeSection === link.href.slice(1)}>{link.label}</a>
             {/each}
-        </nav>
         <a class="contact" href="/contact">Contact</a>
     </nav>
 </header>
@@ -120,7 +118,39 @@ header.topnav {
     background-color: transparent;
     transition: all 0.5s ease;
     color: var(--accent-header);
+    --active-header: var(--primary);
     will-change: height, background-color;
+
+    a.logo {
+        filter: none;
+        animation: logo-light-scroll linear both;
+        animation-timeline: scroll(root);
+        animation-range: 50px 100px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        a.logo {
+            filter: none;
+            animation: none;
+        }
+
+        nav.mobile-nav,
+        nav.desktop-nav,
+        a:not(.logo),
+        button.hamburger,
+        [popover]#mobile-menu .close-btn {
+            color: #F7F7F7;
+        }
+
+        button.hamburger .line,
+        [popover]#mobile-menu .close-btn .line {
+            stroke: #F7F7F7;
+        }
+
+        a:not(.logo).active {
+            color: #43A7FF;
+        }
+    }
 
     @supports (animation-timeline: scroll()) {
         animation: shrink-header linear both;
@@ -181,7 +211,7 @@ header.topnav {
         border-radius: var(--border-button);
         color: var(--accent-header);
 
-        &.active { color: var(--primary); }
+        &.active { color: var(--active-header); }
         &:hover { text-decoration: underline; }
         &:focus-visible { background-color: var(--medium-background); }
     }
@@ -327,6 +357,16 @@ header.topnav {
         padding-left: .5rem;
         font-size: var(--heading-big);
     }
+}
+
+@keyframes logo-light-scroll {
+    from { filter: none; }
+    to { filter: invert(1); }
+}
+
+@keyframes logo-dark-scroll {
+    from { filter: invert(1); }
+    to { filter: none; }
 }
 
 </style>
