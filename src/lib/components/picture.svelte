@@ -164,7 +164,6 @@
 				transform: translate(var(--mxm), var(--mym)) rotate(var(--rotm)) scale(1.1);
 				opacity: 0;
 			}
-
 		}
 	}
 	</style>
