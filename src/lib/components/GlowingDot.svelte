@@ -1,25 +1,25 @@
 <script>
     let {
-        left="20px",
-        top="20px",
-        glowcolor="#fffff"
-	} = $props();
+        left = "",
+        top = "",
+        glowColor = ""
+    } = $props();
 </script>
 
-<div style="--top: {top}; --left: {left}; --glowcoor: {glowcolor};"></div>
+<div style="--top: {top}; --left: {left}; --glowcolor: {glowColor};"></div>
 
 <style>
     div {
-        position: fixed;
+        position: absolute;
         top: var(--top);
         left: var(--left);
         display: flex;
-        width: 8rem;
-        height: 8rem;
+        width: 9rem;
+        height: 9rem;
         border-radius: 50%; 
         cursor: none;
-        background: color-mix(in srgb, var(--glowcolor) 16%, transparent);
-        filter: blur(2.5rem);
-        mix-blend-mode: screen;
+        background: color-mix(in srgb, var(--glowcolor) 36%, transparent);
+        filter: blur(1.5rem);
+        z-index: 0;
     }
 </style>
