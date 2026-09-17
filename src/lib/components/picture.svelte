@@ -1,14 +1,14 @@
 	<script>
 		let {
-		imagesrc,
-		imagesrc_dark = null,
-		class: cssClass = '',
-		width,
-		height,
-		fetch: fetchPriority = 'auto',
-		loading,
-		style = '',
-		alt = ''
+			imagesrc,
+			imagesrc_dark = null,
+			class: cssClass = '',
+			width,
+			height,
+			fetch: fetchPriority = 'auto',
+			loading,
+			style = '',
+			alt = ''
 		} = $props();
 
 		let hasRealDarkMode = $derived(Boolean(imagesrc_dark && imagesrc_dark !== '/assets/images/gijsmemo.webp'));
