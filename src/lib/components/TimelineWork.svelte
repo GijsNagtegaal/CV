@@ -18,9 +18,9 @@
     );
 </script>
 
-<Heading class="fadeinup margin big" heading_level={2} >Mijn <em>Werkervaring</em></Heading>
+<Heading id="werkervaring" class="fadeinup margin biggest" heading_level={2} >Mijn <em>Werkervaring</em></Heading>
 
-<section class="work">
+<section class="work" id="werkervaring">
     {#each sortedJobs as job}
         <article>
             <div class="workwrapper" >
@@ -49,6 +49,7 @@ section.work {
     width: 100%;
 
     @media (min-width:500px) {
+        margin-top: 2rem;
         margin-bottom: 10rem;
     }
 
@@ -89,7 +90,7 @@ section.work {
         }
 
         div.workwrapper {
-            background-color: var(--light-background); 
+            background-color: var(--accent-button); 
             padding: 1rem;
             border-radius: var(--border-badge);
             border: 2px solid var(--dark-background);
@@ -97,9 +98,13 @@ section.work {
         }
 
         h3 {
-            color: var(--accent-card); 
             font-size: 1.25rem; 
             font-style: italic; 
+            color: var(--always-light); 
+        }
+
+        p {
+            color: var(--always-light); 
         }
         
         div.time {
@@ -107,9 +112,11 @@ section.work {
             align-items: center;
             justify-content: flex-start;
             margin-block: .5rem;
+            color: var(--always-light); 
 
             time { 
                 font-size: var(--heading-medium);
+                color: var(--always-light); 
             }
         }
 

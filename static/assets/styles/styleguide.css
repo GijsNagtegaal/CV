@@ -42,7 +42,7 @@ body {
 
     --light-text: light-dark(#F7F7F7, #1a1a1a);
     --dark-text: light-dark(#1a1a1a, #F7F7F7);
-    --body-background-green: #fe8b5038;
+    --background-grey: #76757544;
 
     /* accent colors */
     --accent-card: light-dark(transparent, #F7F7F7);
@@ -77,12 +77,12 @@ main {
     margin: 0 auto;
 
     @media (min-width: 600px) {
-        width: 85%;
+        width: 95%;
         margin: 0 auto;
     }
 
     @media (min-width: 1200px) {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
     }
 }

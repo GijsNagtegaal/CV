@@ -17,9 +17,9 @@
     );
 </script>
 
-<Heading class="fadeinup margin big" heading_level={2} >Mijn <em>Opleidingen</em></Heading>
+<Heading id="opleidingen" class="fadeinup margin big" heading_level={2} >Mijn <em>Opleidingen</em></Heading>
 
-<section class="study">
+<section class="study" id="opleidingen">
     {#each sortedStudies as opleiding}
         <article class="study-card">
             <div class="timeline-marker"></div>
@@ -33,8 +33,8 @@
                         <time datetime="{opleiding.Jaar_gestopt}">{opleiding.Jaar_gestopt}</time>
                     </div>
                 </div>
-                <p class="school">{opleiding.School}</p>
-                <p class="desc">
+                <p>{opleiding.School}</p>
+                <p>
                     {opleiding.Omschrijving}
                 </p>
             </div>
@@ -74,6 +74,9 @@ section.study {
         gap: 2rem; 
         width: 100%;
 
+        
+        color: var(--always-light); 
+
         @media (min-width:500px) {
             grid-template-columns: 1fr 1fr;
         }
@@ -93,7 +96,7 @@ section.study {
         }
 
         div.study-wrapper {
-            background-color: var(--light-background); 
+            background-color: var(--accent-button-inverted); 
             padding: 1rem;
             border-radius: var(--border-badge);
             border: 2px solid var(--dark-background);
@@ -101,7 +104,7 @@ section.study {
         }
 
         h3 {
-            color: var(--accent-card); 
+            color: var(--always-light); 
             font-size: 1.25rem; 
             font-style: italic; 
         }
@@ -114,7 +117,12 @@ section.study {
 
             time { 
                 font-size: var(--heading-medium);
+                color: var(--always-light); 
             }
+        }
+
+        p {
+            color: var(--always-light); 
         }
 
         &:nth-child(odd) div { 

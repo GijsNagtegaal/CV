@@ -54,3 +54,26 @@ export async function getCvOpleidingen(fetcher) {
     const items = await fetchData('cv_opleidingen', fetcher);
     return processItems(items);
 }
+
+export async function getFuelPrice(fetcher) {
+    try {
+        const response = await fetcher('https://www.anwb.nl/auto/brandstof/benzineprijs', {
+            headers: {
+                'User-Agent': 'Mozilla/5.0'
+            }
+        });
+
+        if (!response.ok) return null;
+
+        const html = await response.text();
+        const match = html.match(/"name":"Super Plus 98 \(E5\)","price":([0-9]+(?:\.[0-9]+)?)/i)
+            ?? html.match(/"name":"[^"]*E5[^"]*","price":([0-9]+(?:\.[0-9]+)?)/i);
+
+        if (!match?.[1]) return null;
+
+        return Number(match[1]).toFixed(3).replace('.', ',');
+    } catch (error) {
+        console.error('Fetch error for fuel price:', error);
+        return null;
+    }
+}

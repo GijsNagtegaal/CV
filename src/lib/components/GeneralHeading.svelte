@@ -12,4 +12,8 @@
         margin-top: 5rem;
         margin-bottom: 1rem;
     }
+
+    .biggest {
+        margin-top: 31dvh;
+    }
 </style>

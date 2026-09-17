@@ -53,8 +53,6 @@ let { data } = $props();
 
 <TimelineStudy data={data} />
 
-
-
 <style>
 :global(body) {
     overflow-x: hidden;
