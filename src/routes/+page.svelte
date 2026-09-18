@@ -45,6 +45,14 @@ let { data } = $props();
     </p>
 </section>
 
+
+
+<!-- <GlowingDot glowColorDark="#43A7FF" glowColorLight="#27DAF5" left="5%" top="31%" leftdesktop="5rem" topdesktop="2rem" strength="60%"/>
+<GlowingDot glowColorDark="#43A7FF" glowColorLight="#27DAF5" left="55%" top="38%" leftdesktop="5rem" topdesktop="2rem" strength="60%"/>
+<GlowingDot glowColorDark="#43A7FF" glowColorLight="#27DAF5" left="5%" top="45%" leftdesktop="5rem" topdesktop="2rem" strength="60%"/>
+<GlowingDot glowColorDark="#43A7FF" glowColorLight="#27DAF5" left="55%" top="52%" leftdesktop="5rem" topdesktop="2rem" strength="60%"/>
+<GlowingDot glowColorDark="#43A7FF" glowColorLight="#27DAF5" left="5%" top="63%" leftdesktop="5rem" topdesktop="2rem" strength="60%"/> -->
+
 <TimelineWork data={data} id="werkervaring" />
 
 <TechStack items={data.techStack} id="techstack" />

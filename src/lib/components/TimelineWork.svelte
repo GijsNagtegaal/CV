@@ -1,6 +1,7 @@
 <script>
     import ArrowRight from "./icons/ArrowRight.svelte";
     import Heading from '$lib/components/GeneralHeading.svelte';
+    import GlowingDot from "./GlowingDot.svelte";
 
     let { data } = $props();
 
@@ -21,8 +22,40 @@
 <Heading id="werkervaring" class="fadeinup margin biggest" heading_level={2} >Mijn <em>Werkervaring</em></Heading>
 
 <section class="work">
-    {#each sortedJobs as job}
+    {#each sortedJobs as job, i}
         <article>
+            {#if i % 2 === 0}
+                <GlowingDot 
+                    glowColorDark="#43A7FF" 
+                    glowColorLight="#2C3E50" 
+                    left="0%" 
+                    bottom="-20%" 
+                    leftdesktop="0%" 
+                    topdesktop="55%" 
+                    strength="60%"
+                    width="100%"
+                    height="9rem"
+                    widthdesktop="100%"
+                    heightdesktop="3rem"
+                    column="2"
+                    
+                />
+            {:else}
+                <GlowingDot 
+                    glowColorDark="#43A7FF" 
+                    glowColorLight="#2C3E50" 
+                    left="0%" 
+                    bottom="-20%" 
+                    leftdesktop="0%" 
+                    topdesktop="55%" 
+                    strength="60%"
+                    width="100%"
+                    height="9rem"
+                    widthdesktop="100%"
+                    heightdesktop="3rem"
+                    column="1 / 2"
+                />
+            {/if}
             <div class="workwrapper" >
                 <h3>{job.Functie}</h3>
                 <p>{job.Werkgever}</p>
@@ -118,12 +151,12 @@ section.work {
             }
         }
 
-        &:nth-child(odd) div { 
+        &:nth-child(odd) div.workwrapper { 
             grid-column: 2; 
             border-radius: var(--border-badge);
         }
 
-        &:nth-child(even) div { 
+        &:nth-child(even) div.workwrapper { 
             grid-column: 1;
             border-radius: var(--border-badge);
         }
@@ -132,7 +165,7 @@ section.work {
 
 @supports (animation-timeline: view()) {
     
-    section.work article div {
+    section.work article div.workwrapper {
         opacity: 0;
         will-change: transform, opacity;
         animation-duration: 1ms;
@@ -144,11 +177,11 @@ section.work {
     }
 
     @media (min-width: 789px) {
-        section.work article:nth-child(odd) div {
+        section.work article:nth-child(odd) div.workwrapper {
             animation-name: slide-in-right;
         }
 
-        section.work article:nth-child(even) div {
+        section.work article:nth-child(even) div.workwrapper {
             animation-name: slide-in-left;
         }
     }
